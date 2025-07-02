@@ -1,53 +1,40 @@
-🚀 Launching an EC2 Instance in AWS using Terraform
-✅ Prerequisites
-AWS account
+# AWS EC2 Terraform Demo
 
-AWS Access Key ID and Secret Access Key
+This project demonstrates how to provision an AWS EC2 instance using Terraform.
 
-An existing EC2 key pair in the ap-south-1 region (for SSH access)
+## 📁 Project Structure
 
-Terraform installed and added to system PATH
+Terraform/
+└── ec2-demo/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars (excluded from Git)
+└── .gitignore
 
-🛠️ Steps to Launch EC2
-Create a project folder
 
-bash
-Copy
-Edit
-mkdir ec2-demo
-cd ec2-demo
-Create a file named main.tf
+## 🚀 Getting Started
 
-bash
-Copy
-Edit
-notepad main.tf
-Copy and paste the EC2 configuration into main.tf
-(You can find this configuration in the main.tf file in this project.)
+### Prerequisites
+- [Terraform](https://developer.hashicorp.com/terraform/downloads)
+- AWS CLI configured (`aws configure`)
 
-Initialize Terraform
+### 🔧 Usage
 
-bash
-Copy
-Edit
+```bash
+cd Terraform/ec2-demo
+
+# Initialize the project
 terraform init
-Review the execution plan
 
-bash
-Copy
-Edit
+# Preview the plan
 terraform plan
-Apply the configuration to create the EC2 instance
 
-bash
-Copy
-Edit
+# Apply the configuration
 terraform apply
-Type yes when prompted.
 
-(Optional) Destroy the instance when you're done
 
-bash
-Copy
-Edit
-terraform destroy
+🔐 Security
+Do not hardcode AWS credentials.
+
+Use environment variables or a terraform.tfvars file (which should be in .gitignore).
