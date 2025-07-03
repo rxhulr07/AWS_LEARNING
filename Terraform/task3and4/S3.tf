@@ -3,10 +3,14 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-bucket-task3087"  # Must be globally unique
+  bucket = "my-bucket-07085"
+}
+
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = aws_s3_bucket.my_bucket.id
 
   versioning_configuration {
     status = "Enabled"
   }
-  
 }
+
